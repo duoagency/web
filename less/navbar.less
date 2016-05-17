@@ -1,0 +1,32 @@
+//
+// Navbars
+// --------------------------------------------------
+
+
+// Wrapper and base class
+//
+// Provide a static navbar from which we expand to create full-width, fixed, and
+// other navbar variations.
+
+.navbar {
+  font-size: @navbar-font-size;
+  letter-spacing: @navbar-letter-spacing;
+}
+
+.navbar-brand {
+  padding: @navbar-brand-padding-vertical @navbar-padding-horizontal;
+}
+
+.navbar-nav {
+  > li > a {
+    color: @navbar-link-color;
+  }
+
+  > li > a {
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      background: transparent;
+    }
+  }
+}
