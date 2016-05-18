@@ -31,3 +31,27 @@ jQuery('img.svg').each(function(){
     }, 'xml');
 
 });
+
+function uriSchemeWithHyperlinkFallback(uri, href) {
+    if(!window.open(uri)){
+        window.location= href;
+    }
+}
+
+function openFacebook(event) {
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+        uriSchemeWithHyperlinkFallback('fb://profile/1791853614380409', 'http://www.facebook.com/meetduo');
+        event.preventDefault();
+    }else{
+        window.open('http://www.facebook.com/meetduo', '_blank');
+    }
+}
+
+function openInstagram(event) {
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+        uriSchemeWithHyperlinkFallback('instagram://user?username=meetduo', 'http://instagram.com/meetduo');
+        event.preventDefault();
+    }else{
+        window.open('http://instagram.com/meetduo', '_blank');
+    }
+}
