@@ -11,6 +11,17 @@
 .navbar {
   font-size: @navbar-font-size;
   letter-spacing: @navbar-letter-spacing;
+  &.navbar-fixed-top {
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+    opacity: 1;
+    &.hide-header{
+      opacity: 0;
+    }
+    &.is-fixed{
+      background: @brand-secondary;
+    }
+  }
 }
 
 .navbar-brand {
