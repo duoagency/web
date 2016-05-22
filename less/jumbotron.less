@@ -2,7 +2,6 @@
 // Jumbotron
 // --------------------------------------------------
 
-
 .jumbotron {
   min-height: calc(~"100vh - 20px");
   background: url(../assets/images/header_bg.jpg);
@@ -27,76 +26,6 @@
     }
     .btn {
       margin-top: 40px;
-    }
-  }
-}
-
-.jumbotron.coming-soon{
-  min-height: 100vh;
-  background: @brand-secondary;
-  margin-bottom: 0px;
-  text-align: center;
-  padding: 0px;
-  .logo-duo{
-    margin-bottom: 40px;
-    height: 133px;
-  }
-  .title{
-    font-weight: 300;
-    letter-spacing: @btn-letter-spacing;
-  }
-  .subtitle{
-    font-size: 18px;
-    color: #a8adb6;
-    margin-bottom: 20px;
-    a {
-      color: @brand-primary;
-      text-decoration: none;
-      cursor: pointer;
-      -webkit-transition: all .5s ease;
-      transition: all .5s ease;
-      &:hover{
-        color: #924ACF;
-      }
-    }
-  }
-  @media (max-width: @screen-xs-max) {
-    .logo-duo{
-      height: 100px;
-    }
-    .title{
-      font-size: 35px;
-    }
-    .subtitle{
-      font-size: 16px;
-    }
-  }
-  .outer {
-    display: table;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-  }
-  .middle {
-    display: table-cell;
-    vertical-align: middle;
-  }
-  .inner {
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    padding: 0 15px;
-  }
-  .facebook, .instagram{
-    margin-right: 15px;
-    path{
-      -webkit-transition: all .3s ease;
-      transition: all .3s ease;
-    }
-    &:hover{
-      path {
-        fill: @brand-primary !important;
-      }
     }
   }
 }
