@@ -32,12 +32,12 @@ jQuery('img.svg').each(function(){
 });
 
 $(document).ready( function() {
-    var welcome             = document.querySelector('#welcome'),
-        welcome_height      = getComputedStyle(welcome).height.split('px')[0],
-        navbar              = document.querySelector('nav'),
-        navbar_height       = getComputedStyle(navbar).height.split('px')[0],
-        fix_class           = 'is-fixed',
-        hide_header         = 'hide-header';
+    //var welcome             = document.querySelector('#welcome'),
+    //    welcome_height      = getComputedStyle(welcome).height.split('px')[0],
+    //    navbar              = document.querySelector('nav'),
+    //    navbar_height       = getComputedStyle(navbar).height.split('px')[0],
+    //    fix_class           = 'is-fixed',
+    //    hide_header         = 'hide-header';
     $( "#goPortfolio" ).click(function(event) {
         event.preventDefault();
         $('#portfolio').animatescroll({scrollSpeed:500,padding:81});
@@ -57,24 +57,33 @@ $(document).ready( function() {
 
 
 
-    function stickyScroll(e) {
+    //function stickyScroll(e) {
+    //
+    //
+    //    if( window.pageYOffset < 15 ) {
+    //        navbar.classList.remove(hide_header);
+    //    }
+    //
+    //    if( window.pageYOffset > 15 && window.pageYOffset < (welcome_height - 100)) {
+    //        navbar.classList.add(hide_header);
+    //        navbar.classList.remove(fix_class);
+    //    }
+    //
+    //    if( window.pageYOffset > (welcome_height - 100) ) {
+    //        navbar.classList.remove(hide_header);
+    //        navbar.classList.add(fix_class);
+    //    }
+    //}
 
-
-        if( window.pageYOffset < 15 ) {
-            navbar.classList.remove(hide_header);
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 100){
+            $('#header').addClass("sticky");
         }
-
-        if( window.pageYOffset > 15 && window.pageYOffset < (welcome_height - 100)) {
-            navbar.classList.add(hide_header);
-            navbar.classList.remove(fix_class);
+        else{
+            $('#header').removeClass("sticky");
         }
-
-        if( window.pageYOffset > (welcome_height - 100) ) {
-            navbar.classList.remove(hide_header);
-            navbar.classList.add(fix_class);
-        }
-    }
+    });
 // Scroll handler to toggle classes.
-    window.addEventListener('scroll', stickyScroll, false);
+    //window.addEventListener('scroll', stickyScroll, false);
 
 });
