@@ -7,26 +7,85 @@
 //
 // Provide a static navbar from which we expand to create full-width, fixed, and
 // other navbar variations.
+@sticky-navbar-height: 55px;
 
 .navbar {
   font-size: @navbar-font-size;
   letter-spacing: @navbar-letter-spacing;
+  &.navbar-fixed-top {
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+    min-height: @navbar-height;
+    .navbar-brand {
+      height: @navbar-height;
+      -webkit-transition: all .5s ease;
+      transition: all .5s ease;
+    }
+  }
 }
 
 .navbar-brand {
   padding: @navbar-brand-padding-vertical @navbar-padding-horizontal;
 }
 
+
 .navbar-nav {
   > li > a {
     color: @navbar-link-color;
+    //padding: 0px;
+    //margin: @navbar-padding-vertical 15px;
+    &:before{
+      background: @brand-primary;
+      position: absolute;
+      height: 1px;
+      left: 50%;
+      right: 50%;
+      bottom: 25px;
+      content: "";
+      z-index: -1;
+      -webkit-transition-property: left, right;
+      transition-property: left, right;
+      -webkit-transition-duration: 0.3s;
+      transition-duration: 0.3s;
+      -webkit-transition-timing-function: ease-out;
+      transition-timing-function: ease-out;
+    }
   }
 
   > li > a {
     &:hover,
     &:focus {
-      text-decoration: none;
       background: transparent;
+    }
+    &:hover:before {
+      left: 12px;
+      right: 15px;
+    }
+  }
+}
+
+//STICKY EFFECT!
+.navbar-fixed-top.sticky {
+  background: @brand-secondary;
+  opacity: 0.97;
+  min-height: @sticky-navbar-height;
+  font-size: 12px;
+
+  .navbar-brand {
+    height: @sticky-navbar-height;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+  }
+  .navbar-nav {
+    > li > a {
+      //padding: 0px;
+      padding-top:    ((@sticky-navbar-height - @line-height-computed) / 2);
+      padding-bottom: ((@sticky-navbar-height - @line-height-computed) / 2);
+      //margin-left: 15px;
+      //margin-right: 15px;
+      &:before{
+        bottom: 17px;
+      }
     }
   }
 }
