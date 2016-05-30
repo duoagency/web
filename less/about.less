@@ -1,0 +1,45 @@
+section{
+  margin-bottom: @section-margin-bottom;
+}
+
+.container.about{
+  h2{
+    font-size: 37px;
+    font-weight: 300;
+    margin-bottom: 14px;
+  }
+  h3{
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: @letter-spacing-base;
+    margin-bottom: 14px;
+  }
+  .about-title{
+    margin-bottom: 30px;
+  }
+  .about-values{
+    margin-bottom: 15px;
+    .value-logo{
+      height: 100px;
+      path{
+        fill: @gray-base;
+      }
+    }
+    p {
+      line-height: 26px;
+    }
+  }
+}
+
+.row.techs{
+  background: @withe;
+}
+
+.image-separator{
+  height: 500px;
+  background: url(../assets/images/image-separator.png);
+  background-size: cover;
+  @media screen and (max-width: @screen-xs-max) {
+    height: 300px;
+  }
+}

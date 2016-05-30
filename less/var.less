@@ -40,6 +40,7 @@
 @font-family-sans-serif:  "Roboto", sans-serif;
 @font-size-base:          15px;
 @font-weight-base:        300;
+@letter-spacing-base:     3px;
 
 //** By default, this inherits from the `<body>`.
 @headings-color:          #0A0A0A;
@@ -54,6 +55,12 @@
 @navbar-link-color:                @withe;
 @navbar-brand-padding-vertical:    15px;
 @navbar-letter-spacing:            4px;
+
+//== SECTIONS & CONTAINERS
+//
+//##
+
+@section-margin-bottom:          60px;
 
 //== Jumbotron
 //
@@ -71,7 +78,7 @@
 //## For each of Bootstrap's buttons, define text, background and border color.
 
 @btn-font-weight:                300;
-@btn-letter-spacing:             4px;
+@btn-letter-spacing:             @letter-spacing-base;
 @btn-font-size:                  14px;
 
 @btn-padding-large-horizontal:   50px;

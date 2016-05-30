@@ -22,7 +22,10 @@ jQuery('img.svg').each(function(){
 
         // Check if the viewport is set, if the viewport is not set the SVG wont't scale.
         if(!$svg.attr('viewBox') && $svg.attr('height') && $svg.attr('width')) {
+            console.log('PUTOSSSSS')
             $svg.attr('viewBox', '0 0 ' + $svg.attr('height') + ' ' + $svg.attr('width'))
+        }else{
+            console.log('GATOOOSSS')
         }
 
         // Replace image with new SVG
@@ -32,58 +35,31 @@ jQuery('img.svg').each(function(){
 });
 
 $(document).ready( function() {
-    //var welcome             = document.querySelector('#welcome'),
-    //    welcome_height      = getComputedStyle(welcome).height.split('px')[0],
-    //    navbar              = document.querySelector('nav'),
-    //    navbar_height       = getComputedStyle(navbar).height.split('px')[0],
-    //    fix_class           = 'is-fixed',
-    //    hide_header         = 'hide-header';
+    var headerPadding = 70;
+
     $( "#goPortfolio" ).click(function(event) {
         event.preventDefault();
-        $('#portfolio').animatescroll({scrollSpeed:500,padding:81});
+        $('#portfolio').animatescroll({scrollSpeed:500,padding:headerPadding});
     });
     $( "#goServices" ).click(function(event) {
         event.preventDefault();
-        $('#services').animatescroll({scrollSpeed:500,padding:81});
+        $('#services').animatescroll({scrollSpeed:500,padding:headerPadding});
     });
     $( "#goAbout" ).click(function(event) {
         event.preventDefault();
-        $('#about').animatescroll({scrollSpeed:500,padding:81});
+        $('#about').animatescroll({scrollSpeed:500,padding:headerPadding});
     });
     $( "#goContact" ).click(function(event) {
         event.preventDefault();
-        $('#contact').animatescroll({scrollSpeed:500,padding:81});
+        $('#contact').animatescroll({scrollSpeed:500,padding:headerPadding});
     });
 
-
-
-    //function stickyScroll(e) {
-    //
-    //
-    //    if( window.pageYOffset < 15 ) {
-    //        navbar.classList.remove(hide_header);
-    //    }
-    //
-    //    if( window.pageYOffset > 15 && window.pageYOffset < (welcome_height - 100)) {
-    //        navbar.classList.add(hide_header);
-    //        navbar.classList.remove(fix_class);
-    //    }
-    //
-    //    if( window.pageYOffset > (welcome_height - 100) ) {
-    //        navbar.classList.remove(hide_header);
-    //        navbar.classList.add(fix_class);
-    //    }
-    //}
-
     $(window).scroll(function() {
-        if ($(this).scrollTop() > 100){
+        if ($(this).scrollTop() > 20){
             $('#header').addClass("sticky");
         }
         else{
             $('#header').removeClass("sticky");
         }
     });
-// Scroll handler to toggle classes.
-    //window.addEventListener('scroll', stickyScroll, false);
-
 });
